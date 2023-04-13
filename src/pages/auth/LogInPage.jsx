@@ -11,7 +11,6 @@ import {useRouter} from "next/router";
 import DecoderToken from "@/utils/DecoderToken";
 import {useDispatch} from "react-redux";
 import {logInUser} from "@/hooks/redux/slices/UserSlice";
-import identifiers from "@/data/Identifiers";
 
 
 const LogInPage = () => {
@@ -94,9 +93,9 @@ const LogInPage = () => {
             <InputText {...propsToInputText} />
             <InputPassword {...propsToInputPassword} />
             <button onClick={(event) =>logInSessionHandlerClick(event)}>Iniciar sesión</button>
-            <dialog open={errorWhileAuthenticating} id={identifiers.LOGIN_DIALOG_MESSAGE_ERROR_IDENTIFIER}>
+            <dialog open={errorWhileAuthenticating} id={Identifiers.LOGIN_DIALOG_MESSAGE_ERROR_IDENTIFIER}>
                 {MessagesToUser.FAILED_AUTHENTICATION}
-                <button id={identifiers.LOGIN_BUTTON_DIALOG_MESSAGE_ERROR_IDENTIFIER} onClick={(event) =>hideDialogMessage(event)}>Ok</button>
+                <button id={Identifiers.LOGIN_BUTTON_DIALOG_MESSAGE_ERROR_IDENTIFIER} onClick={(event) =>hideDialogMessage(event)}>Ok</button>
             </dialog>
         </form>
     )
